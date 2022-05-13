@@ -29,10 +29,18 @@
                     </a><i class=""></i>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-eye pr-2"></i>
+                    <a href="{{ route('admin.type.index') }}" class="nav-link">
+                        <i class="nav-icon far fa-bookmark pr-2"></i>
                         <p>
-                            Dashboard
+                            Types
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('admin.tag.index') }}" class="nav-link">
+                        <i class="nav-icon fab fa-buffer pr-2"></i>
+                        <p>
+                            Tags
                         </p>
                     </a>
                 </li>
