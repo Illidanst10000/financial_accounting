@@ -44,6 +44,30 @@
                         </p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="{{ route('admin.category.index') }}" class="nav-link">
+                        <i class="nav-icon far fa-bookmark pr-2"></i>
+                        <p>
+                            Categories
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('admin.earning.index') }}" class="nav-link">
+                        <i class="nav-icon far fa-arrow-alt-circle-up pr-2"></i>
+                        <p>
+                            Earnings
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('admin.spending.index') }}" class="nav-link">
+                        <i class="nav-icon far fa-arrow-alt-circle-down pr-2"></i>
+                        <p>
+                            Spendings
+                        </p>
+                    </a>
+                </li>
 
 
             </ul>

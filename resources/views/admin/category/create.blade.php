@@ -10,7 +10,7 @@
                 <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
             </li>
             <li class="nav-item d-none d-sm-inline-block">
-                <a href="{{ route('admin.tag.index') }}" class="nav-link">Home</a>
+                <a href="{{ route('admin.main.index') }}" class="nav-link">Home</a>
             </li>
 
         </ul>
@@ -25,7 +25,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="ml-3">It's tag #{{$tag->id}}</h1>
+                        <h1 class="ml-3">Category Create</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -42,18 +42,24 @@
         <div class="container-fluid">
             <!-- Small boxes (Stat box) -->
             <div class="row ml-2">
-                <div class="col-md-6 d-flex align-items-center">
-                    <h1 class="mr-3">{{ $tag->title }}</h1>
-                    <a href="{{ route('admin.tag.edit', $tag->id) }}" class="text-success mr-2"><i class="fas fa-pencil-alt text-success"></i></a>
-                    <form action="{{ route('admin.tag.delete', $tag->id)}}" method="POST">
-                        @csrf
-                        @method('DELETE')
-                        <button class="border-0 bg-transparent" type="submit">
-                            <i class="text-danger fas fa-trash" role="button"></i>
-                        </button>
-                    </form>
+                <div class="col-md-6">
+                    <!-- general form elements -->
+                    <div class="card card-primary">
 
+                        <!-- form start -->
+                        <form action="{{ route('admin.category.store') }}" method="POST">
+                            @csrf
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label>Title</label>
+                                    <input type="text" class="form-control" name="title" placeholder="Enter title" >
+                                </div>
 
+                                <input type="submit" class="btn btn-primary" value="Add">
+
+                        </form>
+                    </div>
+                    <!-- /.card -->
 
 
                 </div>

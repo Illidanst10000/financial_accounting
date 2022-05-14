@@ -14,11 +14,13 @@ class Type extends Model
     protected $table = 'types';
     protected $guarded = false;
 
+    public function spendings() {
+        return $this->hasMany(Spending::class);
+    }
+
     public function earnings() {
         return $this->hasMany(Earning::class);
     }
 
-    public function spendings() {
-        return $this->hasMany(Spending::class);
-    }
+
 }

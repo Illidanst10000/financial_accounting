@@ -25,7 +25,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="ml-3">Show source #{{$source->id}}</h1>
+                        <h1 class="ml-3">It's source #{{$source->id}}</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">

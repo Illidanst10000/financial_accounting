@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin\Source;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Admin\StoreRequest;
+use App\Http\Requests\Admin\Source\StoreRequest;
 use App\Models\Source;
 
 class StoreController extends Controller

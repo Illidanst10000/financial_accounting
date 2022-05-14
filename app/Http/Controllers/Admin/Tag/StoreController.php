@@ -3,10 +3,8 @@
 namespace App\Http\Controllers\Admin\Tag;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Admin\StoreRequest;
-use App\Models\Source;
+use App\Http\Requests\Admin\Tag\StoreRequest;
 use App\Models\Tag;
-use App\Models\Type;
 
 class StoreController extends Controller
 {

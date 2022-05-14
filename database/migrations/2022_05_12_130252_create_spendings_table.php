@@ -20,8 +20,9 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->date('date');
 
-            $table->foreignId('category_id')->constrained()->onDelete('cascade');
-            $table->foreignId('type_id')->constrained();
+            $table->foreignId('type_id')->constrained('types');
+            $table->foreignId('category_id')->constrained('categories');
+
 
             $table->softDeletes();
             $table->timestamps();

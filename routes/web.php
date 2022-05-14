@@ -52,6 +52,36 @@ Route::group(['prefix' => 'admin'], function () {
         Route::delete('/{tag}', App\Http\Controllers\Admin\Tag\DeleteController::class)->name('admin.tag.delete');
     });
 
+    Route::group(['prefix' => 'categories'], function () {
+        Route::get('/', App\Http\Controllers\Admin\Category\IndexController::class)->name('admin.category.index');
+        Route::get('/create', App\Http\Controllers\Admin\Category\CreateController::class)->name('admin.category.create');
+        Route::post('/', App\Http\Controllers\Admin\Category\StoreController::class)->name('admin.category.store');
+        Route::get('/{category}', App\Http\Controllers\Admin\Category\ShowController::class)->name('admin.category.show');
+        Route::get('/{category}/edit', App\Http\Controllers\Admin\Category\EditController::class)->name('admin.category.edit');
+        Route::patch('/{category}', App\Http\Controllers\Admin\Category\UpdateController::class)->name('admin.category.update');
+        Route::delete('/{category}', App\Http\Controllers\Admin\Category\DeleteController::class)->name('admin.category.delete');
+    });
+
+    Route::group(['prefix' => 'earnings'], function () {
+        Route::get('/', App\Http\Controllers\Admin\Earning\IndexController::class)->name('admin.earning.index');
+        Route::get('/create', App\Http\Controllers\Admin\Earning\CreateController::class)->name('admin.earning.create');
+        Route::post('/', App\Http\Controllers\Admin\Earning\StoreController::class)->name('admin.earning.store');
+        Route::get('/{earning}', App\Http\Controllers\Admin\Earning\ShowController::class)->name('admin.earning.show');
+        Route::get('/{earning}/edit', App\Http\Controllers\Admin\Earning\EditController::class)->name('admin.earning.edit');
+        Route::patch('/{earning}', App\Http\Controllers\Admin\Earning\UpdateController::class)->name('admin.earning.update');
+        Route::delete('/{earning}', App\Http\Controllers\Admin\Earning\DeleteController::class)->name('admin.earning.delete');
+    });
+
+    Route::group(['prefix' => 'spendings'], function () {
+        Route::get('/', App\Http\Controllers\Admin\Spending\IndexController::class)->name('admin.spending.index');
+        Route::get('/create', App\Http\Controllers\Admin\Spending\CreateController::class)->name('admin.spending.create');
+        Route::post('/', App\Http\Controllers\Admin\Spending\StoreController::class)->name('admin.spending.store');
+        Route::get('/{spending}', App\Http\Controllers\Admin\Spending\ShowController::class)->name('admin.spending.show');
+        Route::get('/{spending}/edit', App\Http\Controllers\Admin\Spending\EditController::class)->name('admin.spending.edit');
+        Route::patch('/{spending}', App\Http\Controllers\Admin\Spending\UpdateController::class)->name('admin.spending.update');
+        Route::delete('/{spending}', App\Http\Controllers\Admin\Spending\DeleteController::class)->name('admin.spending.delete');
+    });
+
 
 
 });
