@@ -73,7 +73,7 @@
                                         @foreach($earnings as $earning)
                                         <tr>
                                             <td>{{$earning->id}}</td>
-                                            <td>{{$earning->type_id}}</td>
+                                            <td>{{$earning->types->title}}</td>
                                             <td>{{$earning->source_id}}</td>
                                             <td>{{$earning->amount}}</td>
                                             <td>{{$earning->date}}</td>

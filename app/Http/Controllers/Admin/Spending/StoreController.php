@@ -13,8 +13,10 @@ class StoreController extends Controller
     public function __invoke(StoreRequest $request)
     {
         $data = $request->validated();
-
-        Spending::firstOrCreate($data);
+        $tagIds = $data['tag_ids'];
+        unset($data['tag_ids']);
+        $spending = Spending::firstOrCreate($data);
+        $spending->tags()->attach($tagIds);
         return redirect()->route('admin.spending.index');
     }
 }

@@ -52,8 +52,12 @@
                             <div class="card-body">
                                 <div class="form-group">
                                     <label>Title</label>
-                                    <input type="text" class="form-control" name="title" placeholder="Enter title" >
+                                    <input type="text" class="form-control" name="title" placeholder="Enter title">
+                                    @error('title')
+                                    <div class="text-danger mt-1"> {{ $message }} </div>
+                                    @enderror
                                 </div>
+
 
                                 <input type="submit" class="btn btn-primary" value="Add">
 

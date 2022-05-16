@@ -24,7 +24,15 @@ class StoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required|string'
+            'title' => 'required|string|unique:categories,title'
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'title.required' => 'You must fill this field',
+            'title.unique' => 'This category already created',
         ];
     }
 }

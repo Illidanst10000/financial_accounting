@@ -39,38 +39,40 @@
         <!-- /.content-header -->
 
         <section class="content">
-        <div class="container-fluid">
-            <!-- Small boxes (Stat box) -->
-            <div class="row ml-2">
-                <div class="col-md-6">
-                    <!-- general form elements -->
-                    <div class="card card-primary">
+            <div class="container-fluid">
+                <!-- Small boxes (Stat box) -->
+                <div class="row ml-2">
+                    <div class="col-md-6">
+                        <!-- general form elements -->
+                        <div class="card card-primary">
 
-                        <!-- form start -->
-                        <form action="{{ route('admin.tag.update', $tag->id) }}" method="POST">
-                            @csrf
-                            @method('PATCH')
-                            <div class="card-body">
-                                <div class="form-group">
-                                    <label>Title</label>
-                                    <input type="text" class="form-control" name="title" placeholder="Enter title" value="{{$tag->title}}">
-                                </div>
+                            <!-- form start -->
+                            <form action="{{ route('admin.tag.update', $tag->id) }}" method="POST">
+                                @csrf
+                                @method('PATCH')
+                                <div class="card-body">
+                                    <div class="form-group">
+                                        <label>Title</label>
+                                        <input type="text" class="form-control" name="title" placeholder="Enter title"
+                                               value="{{$tag->title}}">
+                                        @error('title')
+                                        <div class="text-danger mt-1"> {{ $message }} </div>
+                                        @enderror
+                                    </div>
 
-                                <input type="submit" class="btn btn-primary" value="Update">
+                                    <input type="submit" class="btn btn-primary" value="Update">
 
-                        </form>
+                            </form>
+                        </div>
+                        <!-- /.card -->
+
+
                     </div>
-                    <!-- /.card -->
-
-
                 </div>
             </div>
-        </div>
-        <!-- /.row -->
+            <!-- /.row -->
 
     </div><!-- /.container-fluid -->
     </section>
-
-
 
 @endsection

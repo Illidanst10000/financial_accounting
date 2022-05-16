@@ -14,4 +14,8 @@ class Earning extends Model
     protected $table = 'earnings';
     protected $guarded = false;
 
+    public function types() {
+        return $this->belongsTo(Type::class);
+    }
 }
+

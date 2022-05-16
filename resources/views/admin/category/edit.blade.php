@@ -53,7 +53,10 @@
                             <div class="card-body">
                                 <div class="form-group">
                                     <label>Title</label>
-                                    <input type="text" class="form-control" name="title" placeholder="Enter title" value="{{$category->title}}">
+                                    <input type="text" class="form-control" name="title" placeholder="Enter title" value="{{$category->title}} ">
+                                    @error('title')
+                                    <div class="text-danger mt-1"> {{ $message }} </div>
+                                    @enderror
                                 </div>
 
                                 <input type="submit" class="btn btn-primary" value="Update">
