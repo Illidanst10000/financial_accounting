@@ -15,7 +15,7 @@ class Earning extends Model
     protected $guarded = false;
 
     public function types() {
-        return $this->belongsTo(Type::class);
+        return $this->belongsTo(Type::class, 'type_id');
     }
 }
 
