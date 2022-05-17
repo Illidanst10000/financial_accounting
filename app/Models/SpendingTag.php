@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class SpendingTag extends Model
 {
     use HasFactory;
+
+    protected $table = 'spending_tags';
+    protected $guarded = false;
 }

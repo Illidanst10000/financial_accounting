@@ -13,7 +13,10 @@ class UpdateController extends Controller
     public function __invoke(UpdateRequest $request, Spending $spending)
     {
         $data = $request->validated();
+        $tagIds = $data['tag_ids'];
+        unset($data['tag_ids']);
         $spending->update($data);
+        $spending->tags()->sync($tagIds);
         return redirect()->route('admin.spending.index', compact('spending'));
     }
 }

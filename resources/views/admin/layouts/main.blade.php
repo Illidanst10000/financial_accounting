@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="{{asset('plugins/fontawesome-free/css/all.min.css')}}">
+    <link rel="stylesheet" href=" {{asset('plugins/select2/css/select2.min.css')}} ">
+    <link rel="stylesheet" href=" {{asset('plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css')}} ">
     <!-- overlayScrollbars -->
     <link rel="stylesheet" href="{{asset('plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
     <!-- Theme style -->
@@ -17,6 +19,8 @@
     <link rel="stylesheet" href="{{asset('plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css')}}">
     <!-- Dateranger Picker -->
     <link rel="stylesheet" href="{{asset('plugins/daterangepicker/daterangepicker.css')}}">
+    <!-- Select2 -->
+
 </head>
 <body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 
@@ -42,6 +46,9 @@
     <script src="{{asset('plugins/inputmask/jquery.inputmask.min.js')}}"></script>
     <script src="{{asset('plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js')}}"></script>
 
+    <!-- Select2 -->
+    <script src="{{asset('plugins/select2/js/select2.full.min.js')}} "></script>
+
 
 <!-- PAGE PLUGINS -->
 <!-- jQuery Mapael -->
@@ -63,6 +70,12 @@
                 format: 'YYYY/MM/DD'
             });
         });
+
+        $('.select2').select2()
+
+        ('.select2bs4').select2({
+            theme: 'bootstrap4'
+        })
 
     </script>
 </body>

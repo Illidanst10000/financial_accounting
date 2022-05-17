@@ -15,6 +15,6 @@ class Spending extends Model
     protected $guarded = false;
 
     public function tags() {
-        return $this->belongsToMany(Tag::class);
+        return $this->belongsToMany(Tag::class, 'spending_tags');
     }
 }

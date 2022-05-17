@@ -63,7 +63,12 @@
                                             <div class="input-group-append">
                                                 <span class="input-group-text">.00</span>
                                             </div>
+
                                         </div>
+                                        @error('amount')
+                                        <div class="text-danger"> {{ $message }} </div>
+                                        @enderror
+
 
                                         <label>Date</label>
                                         <div class="form-group">
@@ -76,6 +81,9 @@
                                                     <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                                                 </div>
                                             </div>
+                                            @error('date')
+                                            <div class="text-danger mt-1"> {{ $message }} </div>
+                                            @enderror
                                         </div>
 
                                         <div class="form-group">
@@ -87,6 +95,9 @@
                                                     </option>
                                                 @endforeach
                                             </select>
+                                            @error('type_id')
+                                            <div class="text-danger mt-1"> {{ $message }} </div>
+                                            @enderror
                                         </div>
 
                                         <div class="form-group">
@@ -98,6 +109,9 @@
                                                     </option>
                                                 @endforeach
                                             </select>
+                                            @error('source_id')
+                                            <div class="text-danger mt-1"> {{ $message }} </div>
+                                            @enderror
                                         </div>
 
                                         <label>Description</label>

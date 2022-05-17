@@ -26,9 +26,22 @@ class StoreRequest extends FormRequest
         return [
             'amount' => 'required|int',
             'description' => 'nullable|string',
-            'date' => 'string',
+            'date' => 'required|string',
             'source_id' => 'required|integer|exists:sources,id',
             'type_id' => 'required|integer|exists:types,id',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'amount.required' => 'You must fill this field',
+            'amount.int' => 'You must use int type',
+            'date.required' => 'Select date',
+            'source_id.required' => 'Select source',
+            'source_id.exists' => 'This source is not exist in database',
+            'type_id.required' => 'Select type',
+            'type_id.exists' => 'This type is not exist in database',
         ];
     }
 }

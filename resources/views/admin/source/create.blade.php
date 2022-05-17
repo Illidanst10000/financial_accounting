@@ -39,37 +39,38 @@
         <!-- /.content-header -->
 
         <section class="content">
-        <div class="container-fluid">
-            <!-- Small boxes (Stat box) -->
-            <div class="row ml-2">
-                <div class="col-md-6">
-                    <!-- general form elements -->
-                    <div class="card card-primary">
+            <div class="container-fluid">
+                <!-- Small boxes (Stat box) -->
+                <div class="row ml-2">
+                    <div class="col-md-6">
+                        <!-- general form elements -->
+                        <div class="card card-primary">
 
-                        <!-- form start -->
-                        <form action="{{ route('admin.source.store') }}" method="POST">
-                            @csrf
-                            <div class="card-body">
-                                <div class="form-group">
-                                    <label>Title</label>
-                                    <input type="text" class="form-control" name="title" placeholder="Enter title" >
-                                </div>
+                            <!-- form start -->
+                            <form action="{{ route('admin.source.store') }}" method="POST">
+                                @csrf
+                                <div class="card-body">
+                                    <div class="form-group">
+                                        <label>Title</label>
+                                        <input type="text" class="form-control" name="title" placeholder="Enter title">
+                                        @error('title')
+                                        <div class="text-danger mt-1"> {{ $message }} </div>
+                                        @enderror
+                                    </div>
 
-                                <input type="submit" class="btn btn-primary" value="Add">
+                                    <input type="submit" class="btn btn-primary" value="Add">
 
-                        </form>
+                            </form>
+                        </div>
+                        <!-- /.card -->
+
+
                     </div>
-                    <!-- /.card -->
-
-
                 </div>
             </div>
-        </div>
-        <!-- /.row -->
+            <!-- /.row -->
 
     </div><!-- /.container-fluid -->
     </section>
-
-
 
 @endsection
