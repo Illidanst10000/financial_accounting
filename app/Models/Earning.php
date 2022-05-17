@@ -17,5 +17,9 @@ class Earning extends Model
     public function types() {
         return $this->belongsTo(Type::class, 'type_id');
     }
+
+    public function sources() {
+        return $this->belongsTo(Source::class, 'source_id');
+    }
 }
 

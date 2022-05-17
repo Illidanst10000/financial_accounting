@@ -8,7 +8,7 @@ use App\Models\Source;
 use App\Models\Tag;
 use App\Models\Type;
 
-class CreateController extends Controller
+class CreateController extends BaseController
 {
     public function __invoke()
     {

@@ -12,8 +12,7 @@ class IndexController extends Controller
 {
     public function __invoke()
     {
-        $earning = Earning::find(1);
-        dd($earning->types);
+        $earnings = Earning::all();
         return view('admin.earning.index', compact('earnings'));
     }
 }

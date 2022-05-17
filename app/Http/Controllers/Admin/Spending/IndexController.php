@@ -8,11 +8,12 @@ use App\Models\Earning;
 use App\Models\Source;
 use App\Models\Spending;
 
-class IndexController extends Controller
+class IndexController extends BaseController
 {
     public function __invoke()
     {
         $spendings = Spending::all();
+
         return view('admin.spending.index', compact('spendings'));
     }
 }

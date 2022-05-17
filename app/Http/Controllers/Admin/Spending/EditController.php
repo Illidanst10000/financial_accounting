@@ -10,7 +10,7 @@ use App\Models\Spending;
 use App\Models\Tag;
 use App\Models\Type;
 
-class EditController extends Controller
+class EditController extends BaseController
 {
     public function __invoke(Spending $spending)
     {
