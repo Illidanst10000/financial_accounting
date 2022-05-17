@@ -17,4 +17,12 @@ class Spending extends Model
     public function tags() {
         return $this->belongsToMany(Tag::class, 'spending_tags');
     }
+
+    public function types() {
+        return $this->belongsTo(Type::class, 'type_id');
+    }
+
+    public function categories() {
+        return $this->belongsTo(Category::class, 'category_id');
+    }
 }

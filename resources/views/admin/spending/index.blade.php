@@ -62,7 +62,8 @@
                                         <tr>
                                             <th style="width: 10px">ID</th>
                                             <th>Type</th>
-                                            <th>Source</th>
+                                            <th>Categories</th>
+                                            <th>Tags</th>
                                             <th>Amount</th>
                                             <th>Date</th>
                                             <th colspan="3" class="text-center">Action</th>
@@ -73,8 +74,13 @@
                                         @foreach($spendings as $spending)
                                         <tr>
                                             <td>{{$spending->id}}</td>
-                                            <td>{{$spending->type_id}}</td>
-                                            <td>{{$spending->source_id}}</td>
+                                            <td>{{$spending->types->title}}</td>
+                                            <td>{{$spending->categories->title}}</td>
+                                            <td>
+                                            @foreach($spending->tags as $tag)
+                                            {{$tag->title}}
+                                            @endforeach
+                                            </td>
                                             <td>{{$spending->amount}}</td>
                                             <td>{{$spending->date}}</td>
                                             <td class="text-center"><a href="{{ route('admin.spending.show', $spending->id) }}">

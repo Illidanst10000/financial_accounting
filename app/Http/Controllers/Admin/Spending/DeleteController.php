@@ -7,7 +7,7 @@ use App\Models\Category;
 use App\Models\Earning;
 use App\Models\Spending;
 
-class DeleteController extends Controller
+class DeleteController extends BaseController
 {
     public function __invoke(Spending $spending)
     {

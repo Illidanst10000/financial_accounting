@@ -8,7 +8,7 @@ use App\Models\Earning;
 use App\Models\Source;
 use App\Models\Spending;
 
-class ShowController extends Controller
+class ShowController extends BaseController
 {
     public function __invoke(Spending $spending)
     {

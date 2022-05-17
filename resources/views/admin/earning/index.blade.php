@@ -74,7 +74,7 @@
                                         <tr>
                                             <td>{{$earning->id}}</td>
                                             <td>{{$earning->types->title}}</td>
-                                            <td>{{$earning->source_id}}</td>
+                                            <td>{{$earning->sources->title}}</td>
                                             <td>{{$earning->amount}}</td>
                                             <td>{{$earning->date}}</td>
                                             <td class="text-center"><a href="{{ route('admin.earning.show', $earning->id) }}">

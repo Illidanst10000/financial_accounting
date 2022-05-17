@@ -136,7 +136,7 @@
 
 
                                         <textarea class="form-control" name="description" rows="3"
-                                                  placeholder="Enter ..."></textarea>
+                                                  placeholder="Enter ...">{{ $spending->description }}</textarea>
 
 
                                     </div>

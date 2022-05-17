@@ -119,7 +119,7 @@
 
 
                                         <textarea class="form-control" name="description" rows="3"
-                                                  placeholder="Enter ..."></textarea>
+                                                  placeholder="Enter ..."> {{ $earning->description }}</textarea>
 
 
                                 </div>
