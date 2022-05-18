@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\User\StoreRequest;
 use App\Models\Category;
 use App\Models\User;
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Hash;
 
 class StoreController extends Controller
@@ -14,7 +15,8 @@ class StoreController extends Controller
     {
         $data = $request->validated();
         $data['password'] = Hash::make($data['password']);
-        User::firstOrCreate(['email' => $data['email']], $data);
+        $user = User::firstOrCreate(['email' => $data['email']], $data);
+        event(new Registered($user));
         return redirect()->route('admin.user.index');
     }
 }

@@ -12,13 +12,13 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('main.index');
+Route::group(['middleware' => ['auth', 'verified']], function () {
+    Route::view('/', 'main.index');
 });
 
 
-Route::group(['prefix' => 'admin'], function () {
+
+Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'verified', 'admin']], function () {
     Route::get('/', App\Http\Controllers\Admin\IndexController::class)->name('admin.main.index');
 
 
@@ -98,6 +98,6 @@ Route::group(['prefix' => 'admin'], function () {
 
 
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -14,7 +14,9 @@ return new class extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->unsignedSmallInteger('role')->after('password');
+            $table->unsignedSmallInteger('role')
+                ->after('password')
+                ->default(\App\Models\User::ROLE_USER);
         });
     }
 

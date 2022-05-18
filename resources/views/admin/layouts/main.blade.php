@@ -6,7 +6,8 @@
     <title>AdminLTE 3 | Dashboard 2</title>
 
     <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="{{asset('plugins/fontawesome-free/css/all.min.css')}}">
     <link rel="stylesheet" href=" {{asset('plugins/select2/css/select2.min.css')}} ">
@@ -24,30 +25,57 @@
 </head>
 <body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 
-    @include('admin.includes.sidebar')
+<!-- Navbar -->
+<nav class="main-header navbar navbar-expand navbar-dark ">
+    <!-- Left navbar links -->
+    <div class="col-12 d-flex justify-content-between">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+            </li>
+            <li class="nav-item d-none d-sm-inline-block">
+                <a href="{{ route('admin.main.index') }}" class="nav-link">Home</a>
+            </li>
 
-   @yield('content')
+        </ul>
+
+        <ul class="navbar-nav mr-3">
+            <li class="nav-item ">
+                <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <input class="btn btn-outline-light" type="submit" value="Logout">
+                </form>
+            </li>
+
+        </ul>
+    </div>
+</nav>
+<!-- /.navbar -->
+
+@include('admin.includes.sidebar')
+
+@yield('content')
 <!-- ./wrapper -->
 
 <!-- REQUIRED SCRIPTS -->
 <!-- jQuery  -->
 <script src="{{asset('plugins/jquery/jquery.min.js')}}"></script>
-    <script src="{{asset('plugins/moment/moment.min.js')}}"></script>
-    <!-- date-range-picker -->
-    <script src="{{ asset('plugins/daterangepicker/daterangepicker.js') }}"></script>
+<script src="{{asset('plugins/moment/moment.min.js')}}"></script>
+<!-- date-range-picker -->
+<script src="{{ asset('plugins/daterangepicker/daterangepicker.js') }}"></script>
 <!-- Bootstrap -->
 <script src="{{asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <!-- overlayScrollbars -->
 <script src="{{asset('plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
 <!-- AdminLTE App -->
 <script src="{{asset('dist/js/adminlte.js')}}"></script>
-    <!-- InputMask -->
+<!-- InputMask -->
 
-    <script src="{{asset('plugins/inputmask/jquery.inputmask.min.js')}}"></script>
-    <script src="{{asset('plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js')}}"></script>
+<script src="{{asset('plugins/inputmask/jquery.inputmask.min.js')}}"></script>
+<script src="{{asset('plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js')}}"></script>
 
-    <!-- Select2 -->
-    <script src="{{asset('plugins/select2/js/select2.full.min.js')}} "></script>
+<!-- Select2 -->
+<script src="{{asset('plugins/select2/js/select2.full.min.js')}} "></script>
 
 
 <!-- PAGE PLUGINS -->
@@ -64,19 +92,19 @@
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{asset('dist/js/pages/dashboard2.js')}}"></script>
 
-    <script>
-        $(function () {
-            $('#datetimepicker1').datetimepicker({
-                format: 'YYYY/MM/DD'
-            });
+<script>
+    $(function () {
+        $('#datetimepicker1').datetimepicker({
+            format: 'YYYY/MM/DD'
         });
+    });
 
-        $('.select2').select2()
+    $('.select2').select2()
 
-        ('.select2bs4').select2({
-            theme: 'bootstrap4'
-        })
+    ('.select2bs4').select2({
+        theme: 'bootstrap4'
+    })
 
-    </script>
+</script>
 </body>
 </html>
