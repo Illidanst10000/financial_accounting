@@ -21,5 +21,9 @@ class Earning extends Model
     public function sources() {
         return $this->belongsTo(Source::class, 'source_id');
     }
+
+    public function users() {
+        return $this->belongsToMany(User::class, 'user_earning');
+    }
 }
 

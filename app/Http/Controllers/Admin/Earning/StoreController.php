@@ -14,7 +14,9 @@ class StoreController extends Controller
 
         $data = $request->validated();
 
-        Earning::firstOrCreate($data);
+        $earning = Earning::firstOrCreate($data);
+        $userId = auth()->user()->id;
+        $earning->users()->attach($userId);
         return redirect()->route('admin.earning.index');
     }
 }

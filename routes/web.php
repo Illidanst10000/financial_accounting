@@ -12,8 +12,29 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 Route::group(['middleware' => ['auth', 'verified']], function () {
-    Route::view('/', 'main.index');
+    Route::get('/', App\Http\Controllers\Main\IndexController::class)->name('main.index');
+
+    Route::group(['prefix' => 'earnings'], function () {
+        Route::get('/', App\Http\Controllers\User\Earning\IndexController::class)->name('user.earning.index');
+        Route::get('/create', App\Http\Controllers\User\Earning\CreateController::class)->name('user.earning.create');
+        Route::post('/', App\Http\Controllers\User\Earning\StoreController::class)->name('user.earning.store');
+        Route::get('/{earning}', App\Http\Controllers\User\Earning\ShowController::class)->name('user.earning.show');
+        Route::get('/{earning}/edit', App\Http\Controllers\User\Earning\EditController::class)->name('user.earning.edit');
+        Route::patch('/{earning}', App\Http\Controllers\User\Earning\UpdateController::class)->name('user.earning.update');
+        Route::delete('/{earning}', App\Http\Controllers\User\Earning\DeleteController::class)->name('user.earning.delete');
+    });
+
+    Route::group(['prefix' => 'spendings'], function () {
+        Route::get('/', App\Http\Controllers\User\Spending\IndexController::class)->name('user.spending.index');
+        Route::get('/create', App\Http\Controllers\User\Spending\CreateController::class)->name('user.spending.create');
+        Route::post('/', App\Http\Controllers\User\Spending\StoreController::class)->name('user.spending.store');
+        Route::get('/{spending}', App\Http\Controllers\User\Spending\ShowController::class)->name('user.spending.show');
+        Route::get('/{spending}/edit', App\Http\Controllers\User\Spending\EditController::class)->name('user.spending.edit');
+        Route::patch('/{spending}', App\Http\Controllers\User\Spending\UpdateController::class)->name('user.spending.update');
+        Route::delete('/{spending}', App\Http\Controllers\User\Spending\DeleteController::class)->name('user.spending.delete');
+    });
 });
 
 
@@ -100,4 +121,3 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'verified', 'admin']
 
 Auth::routes(['verify' => true]);
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -59,4 +59,12 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         $this->notify(new SenvVerifyWithQueueNotification());
     }
+
+    public function earnings() {
+        return $this->belongsToMany(Earning::class, 'user_earning');
+    }
+
+    public function spendings() {
+        return $this->belongsToMany(Spending::class, 'user_spending');
+    }
 }

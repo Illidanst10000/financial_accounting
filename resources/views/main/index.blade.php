@@ -1,26 +1,6 @@
 @extends('layouts.main')
 
 @section('content')
-    <div class="wrapper">
-
-
-
-        <!-- Navbar -->
-        <nav class="main-header navbar navbar-expand navbar-dark">
-            <!-- Left navbar links -->
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
-                </li>
-                <li class="nav-item d-none d-sm-inline-block">
-                    <a href="index3.html" class="nav-link">Home</a>
-                </li>
-
-            </ul>
-        </nav>
-        <!-- /.navbar -->
-
-
 
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
@@ -140,26 +120,18 @@
                                         <div class="col-sm-3 col-6">
                                             <div class="description-block border-right">
                                                 <span class="description-percentage text-success"><i class="fas fa-caret-up"></i> 17%</span>
-                                                <h5 class="description-header">$35,210.43</h5>
-                                                <span class="description-text">TOTAL REVENUE</span>
+                                                <h5 class="description-header">{{ $earningSum - $spendingSum }}</h5>
+                                                <span class="description-text">Total balance</span>
                                             </div>
                                             <!-- /.description-block -->
                                         </div>
                                         <!-- /.col -->
-                                        <div class="col-sm-3 col-6">
-                                            <div class="description-block border-right">
-                                                <span class="description-percentage text-warning"><i class="fas fa-caret-left"></i> 0%</span>
-                                                <h5 class="description-header">$10,390.90</h5>
-                                                <span class="description-text">TOTAL COST</span>
-                                            </div>
-                                            <!-- /.description-block -->
-                                        </div>
                                         <!-- /.col -->
                                         <div class="col-sm-3 col-6">
                                             <div class="description-block border-right">
                                                 <span class="description-percentage text-success"><i class="fas fa-caret-up"></i> 20%</span>
-                                                <h5 class="description-header">$24,813.53</h5>
-                                                <span class="description-text">TOTAL PROFIT</span>
+                                                <h5 class="description-header">{{ $earningSum }}</h5>
+                                                <span class="description-text">Total earnings</span>
                                             </div>
                                             <!-- /.description-block -->
                                         </div>
@@ -167,8 +139,8 @@
                                         <div class="col-sm-3 col-6">
                                             <div class="description-block">
                                                 <span class="description-percentage text-danger"><i class="fas fa-caret-down"></i> 18%</span>
-                                                <h5 class="description-header">1200</h5>
-                                                <span class="description-text">GOAL COMPLETIONS</span>
+                                                <h5 class="description-header">{{ $spendingSum }}</h5>
+                                                <span class="description-text">Total spendings</span>
                                             </div>
                                             <!-- /.description-block -->
                                         </div>
@@ -204,5 +176,5 @@
                 <b>Version</b> 1.0.0
             </div>
         </footer>
-    </div>
+
 @endsection

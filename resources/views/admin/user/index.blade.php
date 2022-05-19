@@ -1,7 +1,6 @@
 @extends('admin.layouts.main')
 
 @section('content')
-    <div class="wrapper"
 
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
@@ -107,5 +106,5 @@
                 <b>Version</b> 1.0.0
             </div>
         </footer>
-    </div>
+
 @endsection

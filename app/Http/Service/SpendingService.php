@@ -23,6 +23,9 @@ class SpendingService
                 $spending->tags()->attach($tagIds);
             }
 
+            $userId = auth()->user()->id;
+            $spending->users()->attach($userId);
+
             DB::commit();
         }
         catch (Exception $exception) {
@@ -57,5 +60,14 @@ class SpendingService
         }
 
         return $spending;
+    }
+
+    public function spendingSum() {
+        $userId = auth()->user()->id;
+        $spendingSum = DB::table('spendings')
+            ->join('user_spending', 'spendings.id', '=', 'user_spending.spending_id')
+            ->where('user_id', '=', $userId)
+            ->sum('amount');
+        return $spendingSum;
     }
 }

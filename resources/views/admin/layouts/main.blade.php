@@ -38,16 +38,25 @@
             </li>
 
         </ul>
+        <div class="d-flex">
+            <ul class="navbar-nav mr-3">
+                <li class="nav-item ">
 
-        <ul class="navbar-nav mr-3">
-            <li class="nav-item ">
-                <form action="{{ route('logout') }}" method="POST">
-                    @csrf
-                    <input class="btn btn-outline-light" type="submit" value="Logout">
-                </form>
-            </li>
+                    <a href=" {{ route('main.index') }}" class="btn btn-outline-light">Main Panel</a>
 
-        </ul>
+                </li>
+            </ul>
+            <ul class="navbar-nav mr-3">
+                <li class="nav-item ">
+                    <form action="{{ route('logout') }}" method="POST">
+                        @csrf
+                        <input class="btn btn-outline-light" type="submit" value="Logout">
+                    </form>
+                </li>
+
+            </ul>
+        </div>
+
     </div>
 </nav>
 <!-- /.navbar -->
